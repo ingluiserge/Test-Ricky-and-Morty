@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Character {
+  gender: String!
+  id: Int
+  name: String!
+  origin: Origin
+  species: String!
+  status: String!
+}
+
+input CharacterFilterInput {
+  gender: String
+  id: Float
+  name: String
+  originDimension: String
+  originName: String
+  species: String
+  status: String
+}
+
+input CreateCharacterInput {
+  gender: String!
+  name: String!
+  originDimension: String
+  originName: String
+  species: String!
+  status: String!
+}
+
+type Mutation {
+  createCharacter(createCharacterInput: CreateCharacterInput!): Character!
+}
+
+type Origin {
+  dimension: String!
+  id: Int
+  name: String!
+}
+
+type Query {
+  getCharacters(filters: CharacterFilterInput): [Character!]!
+}
